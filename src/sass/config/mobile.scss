@@ -1,0 +1,25 @@
+$breackpoint: 640px;
+
+@media (max-width:$breackpoint) {
+    body {
+
+        .container {
+            max-width: 320px;
+            height: 80%;
+        }
+
+        .calculator {
+            &__screen {
+                height: 20%;
+            }
+
+            &__body {
+                height: 74%;
+
+                &__bigger-grid {
+                    grid-template-rows: repeat(4, 25%);
+                }
+            }
+        }
+    }
+}
