@@ -4,6 +4,12 @@ $(document).ready(function () {
     let expressaoAtual = $('.calculator__screen__input').val();
     const regex = /^[0-9+\-*/().]$/;
     
+    if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        $('.calculator__screen__input').on('focus', function () {
+            $(this).blur();
+        })
+    };
+
     $('input[name="theme-selector"]').change(function() {
         mudarTema($(this))
     });
