@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="tema1">
+  <div class="container">
+    <header>
+      <h2>calc</h2>
+      <div class="theme-switcher">
+        <h4>THEME</h4>
+        <div class="theme-switcher__container">
+            <div class="theme-switcher__container__option">
+              <label for="tema1">1</label>
+              <input name="theme-selector" id="tema1" type="radio" checked="checked">
+            </div>
+            <div class="theme-switcher__container__option">
+              <label for="tema2">2</label>
+              <input name="theme-selector" id="tema2" type="radio">
+            </div>
+            <div class="theme-switcher__container__option">
+              <label for="tema3">3</label>
+              <input name="theme-selector" id="tema3" type="radio">
+            </div>
+        </div>
+      </div>
+    </header>
+    <form class="calculator">
+      <div class="calculator__screen">
+        <div class="calculator__screen__alert">
+          <p></p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+          </svg>
+        </div>
+        <input class="calculator__screen__input" type="text" inputmode="decimal">
+      </div>
+      <div class="calculator__body">
+        <div class="calculator__body__bigger-grid">
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="7" type="button">7</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="8" type="button">8</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="9" type="button">9</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="control" id="del" type="button">DEL</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="4" type="button">4</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="5" type="button">5</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="6" type="button">6</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="mais" type="button">+</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="1" type="button">1</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="2" type="button">2</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="3" type="button">3</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="menos" type="button">-</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="virgula" type="button">,</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="0" type="button">0</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="divisao" type="button">/</button>
+          </div>
+          <div class="calculator__body__bigger-grid__button-container">
+            <button class="normal" id="vezes" type="button">x</button>
+          </div>
+        </div>
+        <div class="calculator__body__smaller-grid">
+          <div class="calculator__body__smaller-grid__button-container">
+            <button class="control" id="reset" type="reset">RESET</button>
+          </div>
+          <div class="calculator__body__smaller-grid__button-container">
+            <button class="igual" id="igual" type="submit">=</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">JeanzinDoPray</a>.
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+@use 'sass:color';
+    // #### Backgrounds
+    $corFundoPrincipal:hsl(222, 26%, 31%);
+    $corDoBody:hsl(223, 31%, 20%);
+    $corDaTela:hsl(224, 36%, 15%);
+
+    // #### Keys
+    $corTeclaControl:hsl(225, 21%, 49%);
+    $corClareadaTeclaControl: color.scale($corTeclaControl, $lightness: 10%);
+    $sombraTeclaControl:hsl(224, 28%, 35%);
+
+    $corTeclaIgual:hsl(6, 63%, 50%);
+    $corClareadaTeclaIgual: color.scale($corTeclaIgual, $lightness: 10%);
+    $sombraTeclaIgual:hsl(6, 70%, 34%);
+    
+    $corTeclaNormal:hsl(30, 25%, 89%);
+    $corClareadaTeclaNormal: color.scale($corTeclaNormal, $lightness: 10%);
+    $sombraTeclaNormal:hsl(28, 16%, 65%);
+
+    $corRadioThemeSwitcher: hsl(25, 98%, 40%);
+
+    // #### Text
+    $corTextosTeclasNormais:hsl(221, 14%, 31%);
+    $corTextosTeclasControl:hsl(0, 0%, 100%);
+
+@mixin botao-normal {
+    background-color: $corTeclaNormal;
+    box-shadow: 0 -4px 0 $corTeclaNormal, 0 4px 0 $sombraTeclaNormal; 
+    color: $corTextosTeclasNormais;
+}
+
+@mixin botao-control {
+    background-color: $corTeclaControl;
+    box-shadow: 0 -4px 0 $corTeclaControl, 0 4px 0 $sombraTeclaControl;  
+    color: $corTextosTeclasControl;
+    font-size: 28px;
+}
+
+@mixin botao-igual {
+    background-color: $corTeclaIgual;
+    box-shadow: 0 -4px 0 $corTeclaIgual, 0 4px 0 $sombraTeclaIgual; 
+    color: $corTextosTeclasControl;
+}
+
+@mixin estilo-botoes {
+    &.normal {
+        @include botao-normal();
+
+        &:hover {
+            background-color: $corClareadaTeclaNormal;
+            box-shadow: 0 -4px 0 $corClareadaTeclaNormal, 0 4px 0 $sombraTeclaNormal; 
+        }
+    }
+    &.control {
+        @include botao-control();
+        
+        &:hover {
+            background-color: $corClareadaTeclaControl;
+            box-shadow: 0 -4px 0 $corClareadaTeclaControl, 0 4px 0 $sombraTeclaControl; 
+        }
+    }
+    &.igual {
+        @include botao-igual();
+        &:hover {
+            background-color: $corClareadaTeclaIgual;
+            box-shadow: 0 -4px 0 $corClareadaTeclaIgual, 0 4px 0 $sombraTeclaIgual; 
+        }
+    }
+}
+
+body.tema1 {
+    background-color: $corFundoPrincipal;
+
+    header {
+        background-color: $corFundoPrincipal;
+        color: $corTextosTeclasControl;
+
+        .theme-switcher {
+        
+            &__container {
+                background-color: $corDoBody;
+                
+                &__option {
+
+                    input[type='radio'] {
+                        &:checked {
+                            background-color: $corRadioThemeSwitcher;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .calculator {
+
+        &__screen {
+            background-color: $corDaTela;
+            
+            &__alert {
+                background-color: $corTeclaNormal;
+                color: $corTextosTeclasNormais;
+
+                svg {
+                    color: $corTeclaNormal;
+                }
+            }
+
+            &__input{
+                color: $corTextosTeclasControl;
+            }
+        }
+    
+        &__body {
+            background-color: $corDoBody;
+    
+            &__bigger-grid {
+    
+                &__button-container {
+    
+                    button {
+                        @include estilo-botoes();
+                    }
+                }
+            }
+    
+            &__smaller-grid {
+    
+                &__button-container {
+    
+                    button {
+                        @include estilo-botoes();
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
